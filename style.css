@@ -9,8 +9,9 @@
 }
 
 body{
-    margin: 0px;
+    margin: auto;
     padding: 0px;
+    max-width: 1000px;
 }
 
 nav{
@@ -33,9 +34,177 @@ nav{
     font-family: serif;
     font-size: 1em;
     background-color: inherit;
+    color: black;
 }
 
-@media screen and (max-width:500px) {
+#active{
+    position: absolute;
+    background-color: #3C486B;
+    color: #DDE6ED;
+    padding: 1em 1em 2em 1em;
+    border-radius: 0.1em 1em 0em 0em;
+}
+
+article{
+    width: 95%;
+    display: block;
+    margin: auto;
+    border-radius: 1em;
+    background-color: #3C486B;
+}
+
+#article{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.myFoto{
+    width: 45%;
+    text-align: center;
+}
+
+.myFoto img{
+    width: 70%;
+    margin: 1.5em 0em 0em 0em;
+    padding: 4px;
+    background: #DDE6ED;
+    border-radius: 100% 100% 100% 0%;
+}
+
+.myFoto a{
+    color: #DDE6ED;;
+    font-size:x-large;
+    margin: 0px 10px;
+}
+
+.myBiodata{
+    width: 30%;
+    color: #DDE6ED;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+.myBiodata button{
+    background: #F45050;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+    color: #DDE6ED;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    color: #DDE6ED;
+}
+
+.foto {
+    width: 30%;
+    margin: 1.5em;
+
+}
+
+.foto img{
+    padding: 5px;
+    background-color: #DDE6ED;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.me{
+    width: 60%;
+    margin: 0.5em 2em 0.5em 0.5em;
+    font-size: 1.2em;
+    
+}
+
+.bulleted-line {
+    height: 0;
+    width: 90%;
+    border-top: 2px solid #DDE6ED;
+    position: relative;
+    margin: auto;
+  }
+
+.bulleted-line::before, .bulleted-line::after {
+    content: "";
+    position: absolute;
+    top: -4px; 
+    width: 5px;
+    height: 5px; 
+    border-radius: 50%; 
+    background-color: #DDE6ED; 
+}
+
+.bulleted-line::before {
+    left: 0;
+}
+
+.bulleted-line::after {
+    right: 0;
+}
+
+.volume-line {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    height: 9px; 
+    border: 1px solid #DDE6ED;
+    box-shadow: 1px 1px 1px; 
+    border-radius: 10px;
+    background: inherit;
+}
+
+.volume-bar {
+    height: 100%;
+    border-radius:  50px;
+    background: #F45050;
+    transition: width 0.5s ease; 
+}
+
+.skill, .education{
+    color: #DDE6ED;
+    display: flex;
+    width: 90%;
+    padding: 0px 0px 0px 15px;
+    margin: auto;
+}
+
+#judul{
+    color: #DDE6ED;
+    display: flex;
+    width: 90%;
+    margin:1em auto auto;
+}
+
+#setengah {
+    width: 50%;
+}
+
+.gabungan{
+    color: #DDE6ED;
+    display: flex;
+    margin: auto;
+    width: 90%;
+}
+
+.setengah{
+    width: 50%;
+    margin: auto;
+}
+
+.setengah h1{
+    margin: 1em auto auto;
+}
+
+.setengah p{
+    line-height: 1.5;
+}
+
+
+@media screen and (max-width:600px) {
     .logo p{
         font-size: 2em;
     }
@@ -43,5 +212,101 @@ nav{
     .navbar button{
         font-size: 0.7em;
     }
+
+    #article{
+        display: block;
+    }
+    
+    .myFoto{
+        width: 100%;
+    }
+
+    .line{
+        width: 98%;
+        margin: auto;
+        height: 2px;
+        background: white;
+    }
+
+    .myBiodata{
+        width: 70%;
+        margin: auto;
+        font-size: 1em;
+    }
+
+    .myBiodata button{
+        padding: 10px 20px;
+    }
+
+    .container{
+        display: block;
+        
+    }
+
+    .foto {
+        margin: auto;
+        width: 90%;
+        padding: 1em;
+    }
+    
+    .foto img{
+        padding: 5px;
+        background-color: #DDE6ED;
+        width: 100%;
+    }
+
+    .me{
+        width: 80%;
+        margin: auto;
+    }
+
+    #judul{
+        width: 80%;
+    }
+    
+    .skill, .education, .gabungan{
+        line-height: 1.5;
+        width: 75%;
+        margin: auto;
+        padding: 0px;
+        display: block;
+        
+    }
+    
+    .volume-line, #setengah, .setengah {
+        width: 100%;  
+    }
+
+    #bulleted-line {
+        height: 0;
+        width: 120%;
+        border-top: 2px solid #DDE6ED;
+        position: relative;
+        margin: auto auto auto -10%;
+      }
+    
+    #bulleted-line::before, #bulleted-line::after {
+        content: "";
+        position: absolute;
+        top: -4px; 
+        width: 5px;
+        height: 5px; 
+        border-radius: 50%; 
+        background-color: #DDE6ED; 
+    }
+    
+    #bulleted-line::before {
+        left: 0;
+    }
+    
+    #bulleted-line::after {
+        right: 0;
+    }
+    
 }
 
+@media screen and (min-width:1000px){
+    article{
+        width: 100%;
+    }    
+}

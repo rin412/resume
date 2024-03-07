@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  
     <link rel="stylesheet" href="style.css">
     <title>MY RESUME</title>
 </head>
@@ -12,12 +14,39 @@
             <p>Ririn</p>
         </div>
         <div class="navbar">
-            <button onclick="home()">Home</button>
-            <button onclick="aboutMe()">About me</button>
+            <button id="active" onclick="home()">Home</button>
+            <button onclick="home()">aboutme</button>
+            <button onclick="portofolio()">Portofolio</button>
             <button onclick="project()">Project</button>
             <button onclick="contact()">Contact</button>
         </div>
     </nav>
+    <article id="article">
+        <div class="myFoto">
+          <br><br>
+          <img src="/img/hmm.jpg">
+          <p id="hu">
+          <a href="https://wa.me/6283137032039"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/rin412"><i class="fab fa-github"></i></a>
+          <a href="https://bit.ly/rinmay"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ririnrosmaya494@gmail.com"><i class="far fa-envelope"></i></a>
+          </p>
+          <br>
+          <div class="line"></div>
+          
+        </div>
+        
+        <div class="myBiodata">
+          <h1>Hello..!</h1>
+          <p>
+            Nama saya Ririn Rosmaya. <br>
+            Saya lahir di Bandung<br>
+            15 Desember 2006 <br><br>
+            Mau tau lebih lanjut?<br><br><br>
+            <button onclick="portofolio()">Let's Go!</button><br><br><br>
+          </p>
+        </div>
+      </article>
 <script src="/script.js"></script>
 </body>
 </html>

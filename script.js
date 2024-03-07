@@ -2,8 +2,8 @@
 function home() {
     window.location.href = "/index.html"
 }
-function aboutMe() {
-    window.location.href = "/page/aboutme.html"
+function portofolio() {
+    window.location.href = "/page/portofolio.html"
 }
 function project() {
     window.location.href = "/page/project.html"
