@@ -41,7 +41,7 @@ nav{
     position: absolute;
     background-color: #3C486B;
     color: #DDE6ED;
-    padding: 1em 1em 2em 1em;
+    padding: 1em 1em 3em 1em;
     border-radius: 0.1em 1em 0em 0em;
 }
 
@@ -49,7 +49,7 @@ article{
     width: 95%;
     display: block;
     margin: auto;
-    border-radius: 1em;
+    border-radius: 1em 0em 1em 1em;
     background-color: #3C486B;
 }
 
