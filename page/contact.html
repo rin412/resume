@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/style.css">
     <title>MY CONTACT</title>
 </head>
-<body>
+<body >
     <nav>
         <div class="logo">
             <p>Ririn</p>
@@ -20,20 +20,59 @@
         </div>
     </nav>
     <article>
-        <h1>CONTACT ME</h1>
-        <form action="/database/contact.json" method="post">
+        
+        <form id="contactForm">
+            <h1>CONTACT ME</h1>
             <label for="nama">Name:</label><br>
-            <input type="text" id="nama" name="nama" placeholder="masukan nama" required><br>
+            <input type="text" id="nama" name="nama" placeholder="Enter your name" required><br>
             
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" placeholder="name@example.com" required><br>
             
             <label for="pesan">Message:</label><br>
-            <textarea id="pesan" name="pesan" rows="4" placeholder="masukan pesanmu" required></textarea><br>
-            
-            <button type="submit">Kirim</button>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Enter your message" required></textarea><br>
+            <br><br>
+            <button type="submit">Submit</button>
         </form>
-    </article>
-<script src="/script.js"></script>
-</body>
-</html>
+        <script src="/script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
+        <script>
+            // Initialize Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyAkBwjj-BGTjV1Te9kHPV7mjh2AkhM145o",
+                authDomain: "database-3c1c0.firebaseapp.com",
+                projectId: "database-3c1c0",
+                storageBucket: "database-3c1c0.appspot.com",
+                messagingSenderId: "584534453930",
+                appId: "1:584534453930:web:e71b9c50c4e91f27126ad3",
+                measurementId: "G-QE9MMVF74E"
+            };
+            firebase.initializeApp(firebaseConfig);
+    
+            const form = document.getElementById('contactForm');
+    
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default form submission
+    
+                const formData = new FormData(form);
+                const nama = formData.get('nama');
+                const email = formData.get('email');
+                const pesan = formData.get('pesan');
+    
+                // Save data to Firebase Realtime Database
+                firebase.database().ref('contacts').push({
+                    nama: nama,
+                    email: email,
+                    pesan: pesan
+                }).then(() => {
+                    alert('Message sent successfully!');
+                    form.reset();
+                }).catch((error) => {
+                    console.error('Error sending message:', error);
+                    alert('An error occurred. Please try again later.');
+                });
+            });
+        </script>
+    </body>
+    </html>
